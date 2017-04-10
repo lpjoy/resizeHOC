@@ -166,14 +166,14 @@
           width = Math.max(0, this.initialWidth - distanceX);
           left = width > 0 ? this.initialLeft + distanceX : this.initialWidth + this.initialLeft;
         }
-        if (~['right', 'bottomRight', 'topRight'].indexOf(direction)) {
+        else if (~['right', 'bottomRight', 'topRight'].indexOf(direction)) {
           width = Math.max(0, this.initialWidth + distanceX);
         }
         if (~['top', 'topLeft', 'topRight'].indexOf(direction)) {
           height = Math.max(0, this.initialHeight - distanceY);
           top = height > 0 ? this.initialTop + distanceY : this.initialHeight + this.initialTop;
         }
-        if (~['bottom', 'bottomLeft', 'bottomRight'].indexOf(direction)) {
+        else if (~['bottom', 'bottomLeft', 'bottomRight'].indexOf(direction)) {
           height = Math.max(0, this.initialHeight + distanceY);
         }
 
