@@ -58,10 +58,20 @@ All licycle functions has to be passed as props into decorated component.
 <ResizableComponent
 	width={width}
 	height={height}
-	onResizeStop={func}
+	onResize={onResize}
+	onResizeStart={onResizeStart}
+	onResizeStop={onResizeStop}
 />
 ...
 ```
+
+### onResizeStart({ top: Number, left: Number: width: Number, height: Number }): void
+
+This function is called when resizing has started
+
+### onResize({ top: Number, left: Number: width: Number, height: Number }): void
+
+This function is called when component is resized
 
 ### onResizeStop({ top: Number, left: Number: width: Number, height: Number }): void
 

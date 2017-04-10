@@ -149,6 +149,8 @@
         this.direction = direction;
         this.originalX = event.clientX;
         this.originalY = event.clientY;
+        const { left, top, width, height } = this.state;
+        this.props.onResizeStart({ top, left, width, height });
       }
 
       resize(event) {
@@ -178,6 +180,7 @@
         }
 
         this.setState({ top, left, width, height });
+        this.props.onResize({ top, left, width, height });
       }
 
       resizeStop(event) {
@@ -200,7 +203,7 @@
         const { top, left, width, height } = this.state;
         const omit = Object.keys(ResizeParent.propTypes);
         const passThroughProps = except(this.props, omit)
-        const componentProps = Object.assign({}, passThroughProps, { width, height });
+        const componentProps = Object.assign({}, passThroughProps, { width, height, isResizing: this.isResizing });
 
         return React.createElement(
           'div',
