@@ -12,6 +12,10 @@ https://jsfiddle.net/mauron85/krhub6e7/
 React-virtualized table:
 https://jsfiddle.net/mauron85/cr0qvs13/
 
+## Use case
+
+Your component has to have width and height defined. If your component is using relative units (eg. `width: 100%`), this component is not for you.
+
 ## Motivation
 
 There are severe React components with similar functionality:
@@ -34,8 +38,6 @@ However using resizeHOC has some benefits:
 * live resize without any props callbacks
 * play nicely with complex components like react-virtualized list, table, grid...
 
-TODO...
-
 ## Usage
 
 ``` javascript
@@ -54,7 +56,8 @@ All licycle functions has to be passed as props into decorated component.
 
 ...
 <ResizableComponent
-	{...dimensions}
+	width={width}
+	height={height}
 	onResizeStop={func}
 />
 ...
